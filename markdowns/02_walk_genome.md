@@ -1,0 +1,42 @@
+### Step 1: Pre-processing – Walking the Genome
+
+!!! failure ""
+    Do not run this command. **If everything is running correctly,
+    it will take approximately 40 minutes to run.
+
+  ```
+  sequenza-utils bam2seqz \
+  -n data/normal.chr5.60Mb.bam \
+  -t data/tumour.chr5.60Mb.bam \
+  --fasta assets/human_g1k_v37.fasta \
+  -gc assets/human_g1k_v37.gc50Base.txt.gz \
+  -C 5:1-60000000 -o stage1.seqz.gz
+  ```
+
+!!! hint "Hint"
+    Press tab after typing a few characters of a directory of filename to
+    auto-complete the rest. This makes entering long file names very quick.
+
+Explanation of parameters:
+
+  >  **-n**: the normal BAM  
+  >  **-t**: the tumour BAM  
+  >  **-\-fasta**: the reference genome used for mapping (b37 here)  
+  >  **-gc**: GC content as windows through the genome (pre-generated and downloadable from the Sequenza website)  
+  >  **-C**: specifies the genomic location to process  
+
+Make sure the output file is the correct size by typing `ls -lhH` from the
+Terminal window that you ran `Sequenza` from, there should be a file
+called `stage1.seqz.gz` of the size ~395M.
+
+
+You can look at the first few lines of the output in the file
+`stage1.seqz.gz` with:
+
+  ```bash
+  zcat stage1.seqz.gz | head -n 20
+  ```
+
+This output has one line for each position in the BAMs and includes
+information on the position, depths, allele frequencies, zygosity, GC in
+the location.

@@ -1,0 +1,27 @@
+chunks:
+
+-
+    title: "Welcome to Copy Number Variation Analysis"
+    id: welcome
+    rules:
+    -
+        weight: 100
+
+    -
+        weight: 0
+
+    content: |
+
+        # Copy Number Variation analysis 
+
+        -   Understand and perform a simple copy number variation analysis on
+            NGS data
+
+        -   Become familiar with Sequenza
+
+        -   Understand the CNV inference process as an interplay between depth
+            of sequencing, cellularity and B-allele frequency
+
+        -   Visualize CNV events by manual inspection
+
+        <i class="fab fa-creative-commons"></i> / by BPA and CSIRO

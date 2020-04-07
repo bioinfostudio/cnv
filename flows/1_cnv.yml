@@ -1,0 +1,81 @@
+title: "Copy Number Variation"
+description: |
+
+    # Copy Number Variation
+
+rules:
+    start:
+    -
+        if_has_role: [student, ta, instructor]
+        if_has_fewer_sessions_than: 4
+        may_start_new_session: True
+        may_list_existing_sessions: True
+
+    -
+        may_start_new_session: False
+        may_list_existing_sessions: True
+
+    access:
+    -
+        permissions: [view, submit_answer, end_session, see_correctness, see_answer_after_submission]
+
+    grade_identifier: cnv
+    grade_aggregation_strategy: use_latest
+
+    grading:
+    -
+        credit_percent: 100
+
+groups:
+-
+    id: cnv
+    shuffle: False
+    pages:
+    -
+        type: TerminalQuestion
+        id: intro
+        cid: cnv
+        title: Introduction
+        prompt: |
+
+            {% include "markdowns/01_introduction.md" %}
+    -
+        type: TerminalQuestion
+        id: bam2seqz
+        cid: cnv 
+        title: Walking the Genome
+        prompt: |
+
+            {% include "markdowns/02_walk_genome.md" %}
+    -
+        type: TerminalQuestion
+        id: bin
+        cid: cnv
+        title: Binning 
+        prompt: |
+
+            {% include "markdowns/03_binning.md" %}
+    -
+        type: TerminalQuestion
+        id: sequenza
+        cid: seqz
+        title: Running Sequenza Algorithms
+        prompt: |
+
+            {% include "markdowns/04_sequenza_plot.md" %}
+    -
+        type: TerminalQuestion
+        id: plot
+        cid: cellularity
+        title: Sequenza Analysis Results
+        prompt: |
+
+            {% include "markdowns/05_sequenza_viz.md" %}
+    -
+        type: TerminalQuestion
+        id: confirm
+        cid: cellularity
+        title: CNV Visualisation/Confirmation in IGV
+        prompt: |
+
+            {% include "markdowns/06_viz_on_igv.md" %}
