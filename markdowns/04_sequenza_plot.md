@@ -5,28 +5,28 @@ part of Sequenza.
 
 Open the `R` terminal:
 
-  ```R
-  R
-  ```
+```bash
+R
+```
 
 You should now see the `R` prompt identified with ">".
 
 Run the Sequenza `R` commands:
 
-  ```R
-  library("sequenza")
-  setwd("/home/bioinfo/cnv")
-  data.file <- "stage2.seqz.gz"
-  seqzdata <- sequenza.extract(data.file)
-  CP.example <- sequenza.fit(seqzdata)
-  sequenza.results(sequenza.extract = seqzdata, cp.table = CP.example, sample.id = "CanGenWorkshop", out.dir="sequenza_results")
-  ```
+```R
+library("sequenza")
+setwd("/home/bioinfo/cnv")
+data.file <- "stage2.seqz.gz"
+seqzdata <- sequenza.extract(data.file)
+CP.example <- sequenza.fit(seqzdata)
+sequenza.results(sequenza.extract = seqzdata, cp.table = CP.example, sample.id = "CanGenWorkshop", out.dir="sequenza_results")
+```
 
 Quit `R`:  
 
-  ```R
-  q()
-  ```  
+```R
+q()
+```  
 
 Then enter `n` at the "Save workspace image" prompt.
 
