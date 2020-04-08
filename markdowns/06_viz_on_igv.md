@@ -28,21 +28,31 @@ means that we can aggregate the average read depth over relatively large
 chunks of the genome and compare these values between the normal and
 tumour genomes.
 
-To begin, we will go to `Tools` then `Run igvtools...` in the IGV
-menubar. Specify the normal bam file (under `cnv` then `data`) as the
-input file and change the window size to 100,000 (one hundred thousand).
-Then press the `Run` button and IGV will make the TDF file. This takes
-about 5 minutes. **Repeat this for the tumour genome.**
+Before jumping into `IGV`, we’ll generate a track IGV that can be used to plot
+coverage:
 
-After you have both TDF files, go to `File` and `Load from file...` in
-the menubar and select the BAM and TDF files to open. Once you have
-opened them, they will appear as tracks along with the BAM tracks we
-loaded initially. Navigate to the genomic coordinates of our event
+You DO NOT need to run this command. This has already been run for you.
+This takes about 5 minutes.
+
+```bash
+for i in normal tumour
+do
+    igvtools count \
+    -f min,max,mean \
+    data/${i}.chr5.60Mb.bam \
+    data/${i}.chr5.60Mb.bam.tdf \
+    b37
+done
+```
+
+Navigate to the genomic coordinates of our event
 (5:21,051,700-21,522,065) by typing it in the coordinate box at the top.
 Mouse over the two blue tracks to get the average depth values for the
 100,000 bp windows. What you should see is that the liverMets sample has
 3-6X more coverage than the Blood sample for the four windows that cover
 this region.
+
+<div id="igv-div"></div>
 
 This may seem a bit underwhelming, after all, wasn’t the increase of the
 region to a copy number of 4, i.e. we expect a doubling of reads in the
@@ -82,3 +92,39 @@ a net increase in reads supplying evidence for copy number events and
 variants and in aggregate these will still retain power to infer these
 events when using tools that look at the whole genome like Sequenza
 does.
+
+<script type="text/javascript">
+  var igvDiv = document.getElementById("igv-div");
+  var options =
+    {
+        genome: "hg19",
+        locus: "5:1-60000000",
+        tracks: [
+            {
+                type: "alignment",
+                format: "bam",
+                name: "Tumour",
+                url: "gs://bioinfostudio/cnv/data/tumour.chr5.60Mb.bam",
+                indexURL: "gs://bioinfostudio/cnv/data/tumour.chr5.60Mb.bam.bai",
+            },
+            {
+                type: "alignment",
+                format: "bam",
+                name: "Normal",
+                url: "gs://bioinfostudio/cnv/data/normal.chr5.60Mb.bam",
+                indexURL: "gs://bioinfostudio/cnv/data/normal.chr5.60Mb.bam.bai",
+            },
+            {
+                format: "tdf",
+                name: "Tumour",
+                url: "gs://bioinfostudio/cnv/data/tumour.chr5.60Mb.tdf",
+            },
+            {
+                format: "tdf",
+                name: "Normal",
+                url: "gs://bioinfostudio/cnv/data/normal.chr5.60Mb.tdf",
+            },
+        ]
+    };
+    igv.createBrowser(igvDiv, options)
+</script>

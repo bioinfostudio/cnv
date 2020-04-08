@@ -8,7 +8,7 @@ interpretation of Sequenza results and for other analyses. Lets look at
 the cellularity estimate for our analysis by opening
 `CanGenWorkshop_model_fit.pdf` with the command:
 
-  [CanGenWorkshop_model_fit.pdf](repo:sequenza_results/CanGenWorkshop_model_fit.pdf)
+  [CanGenWorkshop_model_fit.pdf](repo:sequenza_results/CanGenWorkshop_model_fit.pdf){:target="_blank"}
 
 The cellularity estimate is at the top along with the average ploidy
 estimate and the standard deviation of the B allele frequency. We can
@@ -21,7 +21,7 @@ indicates there are no significant long losses of heterozygosity.
 Let’s now look at the CNV inferences through our genomic block. Open the
 genome copy number visualisation file with:
 
-  [CanGenWorkshop_genome_view.pdf](repo:sequenza_results/CanGenWorkshop_genome_view.pdf)
+  [CanGenWorkshop_genome_view.pdf](repo:sequenza_results/CanGenWorkshop_genome_view.pdf){:target="_blank"}
 
 This file contains three "pages" of copy number events through the
 entire genomic block.
@@ -48,13 +48,13 @@ is located in the `pre_generated/results_whole_genome` folder and
 contains the same 13 output files as for the small genomic block. As
 before, let’s look at the cellularity estimate with:
 
-  [CanGenWorkshop_model_fit.pdf](repo:pre_generated/results_whole_genome/CanGenWorkshop_model_fit.pdf)
+  [CanGenWorkshop_model_fit.pdf](repo:pre_generated/results_whole_genome/CanGenWorkshop_model_fit.pdf){:target="_blank"}
 
 It now looks like it’s even worse at just 16%! A change is to be
 expected as we were only analysing 1.9% of the genome. Let’s now look at
 the whole genome copy number profile with:
 
-  [CanGenWorkshop_genome_view.pdf](repo:pre_generated/results_whole_genome/CanGenWorkshop_genome_view.pdf)
+  [CanGenWorkshop_genome_view.pdf](repo:pre_generated/results_whole_genome/CanGenWorkshop_genome_view.pdf){:target="_blank"}
 
 You can see that there are a number of copy number events across the
 genome and our genomic block (the first 60Mb of chromosome 5) is

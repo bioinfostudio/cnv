@@ -34,7 +34,7 @@ groups:
     -
         type: TerminalQuestion
         id: intro
-        cid: cnv
+        cid: cnv-base
         title: Introduction
         prompt: |
 
@@ -74,7 +74,7 @@ groups:
     -
         type: TerminalQuestion
         id: confirm
-        cid: cellularity
+        cid: cnv-viz
         title: CNV Visualisation/Confirmation in IGV
         prompt: |
 
