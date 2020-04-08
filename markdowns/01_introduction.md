@@ -43,19 +43,20 @@ cancer genomics on full genomes!
 
 Open the Terminal and go to the `cnv` working directory:
 
-    cd /home/bioinfo/cnv/
+```bash
+cd /home/bioinfo/cnv/
+```
 
-
-!!! failure ""
-    All commands entered into the terminal for this tutorial should be from
-    within the **`cnv`** directory.
+All commands entered into the terminal for this tutorial should be from
+within the **`cnv`** directory.
 
 
 Check that the `data` directory contains the above-mentioned files by
 typing:
 
-    ls -l data
-
+```bash
+ls -l data
+```
 
 ## Sequenza CNV Analysis
 
