@@ -101,22 +101,6 @@ does.
         locus: "5:1-60000000",
         tracks: [
             {
-                type: "alignment",
-                format: "bam",
-                name: "Tumour",
-                url: "gs://bioinfostudio/cnv/data/tumour.chr5.60Mb.bam",
-                indexURL: "gs://bioinfostudio/cnv/data/tumour.chr5.60Mb.bam.bai",
-                visibilityWindow: 600000
-            },
-            {
-                type: "alignment",
-                format: "bam",
-                name: "Normal",
-                url: "gs://bioinfostudio/cnv/data/normal.chr5.60Mb.bam",
-                indexURL: "gs://bioinfostudio/cnv/data/normal.chr5.60Mb.bam.bai",
-                visibilityWindow: 600000
-            },
-            {
                 name: "Tumour",
                 url: "gs://bioinfostudio/cnv/data/tumour.chr5.60Mb.bam.tdf",
                 color: "blue"
