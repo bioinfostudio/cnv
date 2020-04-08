@@ -32,7 +32,7 @@ Before jumping into `IGV`, we’ll generate a track IGV that can be used to plot
 coverage:
 
 You DO NOT need to run this command. This has already been run for you.
-This takes about 5 minutes.
+This takes about 10 minutes.
 
 ```bash
 for i in normal tumour
@@ -106,6 +106,7 @@ does.
                 name: "Tumour",
                 url: "gs://bioinfostudio/cnv/data/tumour.chr5.60Mb.bam",
                 indexURL: "gs://bioinfostudio/cnv/data/tumour.chr5.60Mb.bam.bai",
+                visibilityWindow: 600000
             },
             {
                 type: "alignment",
@@ -113,16 +114,18 @@ does.
                 name: "Normal",
                 url: "gs://bioinfostudio/cnv/data/normal.chr5.60Mb.bam",
                 indexURL: "gs://bioinfostudio/cnv/data/normal.chr5.60Mb.bam.bai",
+                visibilityWindow: 600000
             },
             {
-                format: "tdf",
                 name: "Tumour",
-                url: "gs://bioinfostudio/cnv/data/tumour.chr5.60Mb.tdf",
+                url: "gs://bioinfostudio/cnv/data/tumour.chr5.60Mb.bam.tdf",
+                color: "blue"
             },
             {
                 format: "tdf",
                 name: "Normal",
-                url: "gs://bioinfostudio/cnv/data/normal.chr5.60Mb.tdf",
+                url: "gs://bioinfostudio/cnv/data/normal.chr5.60Mb.bam.tdf",
+                color: "blue"
             },
         ]
     };
