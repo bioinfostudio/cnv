@@ -50,7 +50,7 @@ groups:
     -
         type: TerminalQuestion
         id: bin
-        cid: cnv
+        cid: seqz
         title: Binning 
         prompt: |
 

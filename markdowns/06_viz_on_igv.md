@@ -1,7 +1,7 @@
 ## CNV Visualisation/Confirmation in IGV
 
 Let’s see if we can visualise one of the CNV events where copy number
-increased significantly. We’ll focus on the copy number 4 event seen at
+increased significantly. We’ll focus on the copy number 6 event seen at
 about 1/3 of the way through the `CanGenWorkshop_genome_view.pdf` output
 we generated. First, we need to find the coordinates that have been
 predicted for this event. Have a look at the `CanGenWorkshop_segments.txt`
@@ -11,7 +11,7 @@ file in the results folder to view all predicted CNV events with:
   less sequenza_results/CanGenWorkshop_segments.txt
   ```
 
-There is only one at a copy number of 4 (CNt column) and it starts at
+There is only one at a copy number of 6 (CNt column) and it starts at
 21,051,700 to 21,522,065 which is 470kb and corresponds to the small block
 we see in the genome view PDF.
 
@@ -55,34 +55,34 @@ this region.
 <div id="igv-div"></div>
 
 This may seem a bit underwhelming, after all, wasn’t the increase of the
-region to a copy number of 4, i.e. we expect a doubling of reads in the
+region to a copy number of 6, i.e. we expect a doubling of reads in the
 tumour? To explain why we are only seeing such a small coverage
 increase, we need to turn to our good friend mathematics!
 
 Imagine we have two 30X genomes for the normal and tumour samples and
-the tumour is at 100% purity. If there is a copy number increase to 4 in
+the tumour is at 100% purity. If there is a copy number increase to 6 in
 the tumour from 2 in the normal, the duplicated segment should indeed
-have twice as many reads as the same segment in the normal genome. Now,
+have thrice as many reads as the same segment in the normal genome. Now,
 lets imagine the tumour genome was only at a purity of 50% (i.e. it
 contains 50% normal cells and 50% tumour cells). Now, half of the
 duplicated "tumour genome" segment will be at a copy number of 2 and
 half will be at 4. What does this mean when we sequence them as a
 mixture? The resulting average copy number of the block will be
-\((0.5*2)+(0.5*4) = 3\). Now what if we only have 16% tumour cells in our
-"tumour genome"? This will be \((0.84*2)+(0.16*4) = 2.32\). You can see
+\((0.5*2)+(0.5*4) = 3\). Now what if we only have 15% tumour cells in our
+"tumour genome"? This will be \((0.85*2)+(0.15*4) = 2.30\). You can see
 how sequencing a low cellularity tumour at a low depth makes it much
 harder to infer copy number variations!
 
 Returning to our genomes at hand, when we previously looked at the
-cellularity estimate of this tumour we saw it was 20% from the small
-block we ran or 16% from the whole genome. Thus, the read depth increase
+cellularity estimate of this tumour we saw it was 15% from the small
+block we ran. Thus, the read depth increase
 of just 3-6X (about 10-20% more reads) in this segment is not
 surprising. A low cellularity tumour greatly reduces our power to infer
 copy number events as relatively small changes in depth can occur by
 chance in the genome and these can be mis-identified as copy number
 changes. As well as this, it reduces our power for other analyses since
 we must also remember that a tumour can itself contain multiple clones
-which have to share just 16% of reads.
+which have to share just 15% of reads.
 
 It is possible to sequence through a low-cellularity sample when, for
 example, there is no way to take another sample (as is the case of most

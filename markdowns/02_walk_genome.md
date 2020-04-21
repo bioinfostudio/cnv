@@ -26,9 +26,6 @@ sequenza-utils bam2seqz \
 -C 5:1-60000000 -o stage1.seqz.gz
 ```
 
-Press tab after typing a few characters of a directory of filename to
-auto-complete the rest. This makes entering long file names very quick.
-
 Explanation of parameters:
 
   >  **-n**: the normal BAM  
